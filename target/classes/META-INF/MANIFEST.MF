@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: gx-vaadin10
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: farhan
+Implementation-Vendor-Id: com.afkghouri
+Build-Jdk: 1.8.0_172
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/gx-vaadin10
+Created-By: Maven Integration for Eclipse
+
