@@ -1,30 +1,25 @@
 package com.afkghouri.vaadin;
 
-import com.vaadin.flow.component.Tag;
-import com.vaadin.flow.router.Route;
-
+import com.afkghouri.workshop.AbstractDashboardSetup; 
 
 
 public class LoginComponent extends VaadinAbstractLoginComponent {
 
-	public LoginComponent() {
-		System.out.println("LoginComponent");
-		// TODO Auto-generated constructor stub
+	private AbstractDashboardSetup dashboardSetup;
+
+	public LoginComponent(AbstractDashboardSetup dashboardSetup) {
+		this.dashboardSetup = dashboardSetup;
 	}
-//	private AbstractDashboardSetup dashboardSetup;
-//
-//	public LoginComponent(AbstractDashboardSetup dashboardSetup) {
-//		this.dashboardSetup = dashboardSetup;
-//	}
-//
+
 //	@Override
 //	protected boolean isSpringComponent() {
 //		return false;
 //	}
-//
-//	@Override
-//	protected AbstractDashboardSetup dashboardSetup() {
-//		return dashboardSetup;
-//	}
+
+	@Override
+	protected AbstractDashboardSetup dashboardSetup() {
+		System.out.println(dashboardSetup);
+		return dashboardSetup;
+	}
 
 }

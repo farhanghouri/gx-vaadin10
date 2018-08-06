@@ -1,5 +1,7 @@
 package com.afkghouri.vaadin;
 
+import javax.annotation.PostConstruct;
+
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button; 
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
@@ -14,14 +16,18 @@ public class LoginForm extends VerticalLayout{
     
     public LoginForm() { 
     	System.out.println("LoginForm");
+    	init();
+	}
+   // @PostConstruct
+    void init(){
 		userNameField = new TextField("",""); 
 		passwordField = new PasswordField("", "");
 		loginButton = new Button("");
 		loginButton.addClassName("my");
-		postConstruct(); 
-	}
-    private void postConstruct(){
-    	
+		postConstruct();  
+    }
+    
+    private void postConstruct(){ 
     	add(createContent(userNameField, passwordField, loginButton));
     }
     protected Component createContent(TextField userNameField,

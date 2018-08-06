@@ -1,18 +1,26 @@
 package com.afkghouri;
 
  
-import com.afkghouri.vaadin.LoginComponent; 
-import com.vaadin.flow.component.dependency.HtmlImport;
-import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.router.Route;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.afkghouri.vaadin.AbstractDashboardUI; 
+import com.afkghouri.workshop.AbstractDashboardSetup;
+import com.afkghouri.workshop.WorkshopDashboardSetup;
+import com.vaadin.flow.component.dependency.HtmlImport; 
+import com.vaadin.flow.router.Route; 
+ 
 
 @Route("")
 
 @HtmlImport("VAADIN/themes/graphenee/views/login.html")
-public class VaadinUI extends VerticalLayout {
+public class VaadinUI extends AbstractDashboardUI {
+ 
 
-	public VaadinUI() { 
-		add(new LoginComponent()); 
-	     
+	@Autowired
+	WorkshopDashboardSetup dashboardSetup;
+
+	@Override
+	protected AbstractDashboardSetup dashboardSetup() { 
+		return dashboardSetup;
 	}
 }

@@ -1,7 +1,8 @@
 package com.afkghouri.vaadin;
 
 import javax.annotation.PostConstruct;
- 
+
+import com.afkghouri.workshop.AbstractDashboardSetup;
 import com.vaadin.flow.component.Component; 
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.checkbox.Checkbox; 
@@ -37,6 +38,9 @@ public abstract class VaadinAbstractLoginComponent extends LoginForm{
 		VerticalLayout mainLayout = null;
 		if (mainLayout == null) {
 			mainLayout = new VerticalLayout();
+			loginButton.addClickListener(listener->{
+				dashboardSetup();
+			});
 			//mainLayout.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
 //			addLoginListener(listener -> {
 //				UserLoginRequestedEvent userLoginRequestedEvent = new UserLoginRequestedEvent(listener.getLoginParameter("username"), listener.getLoginParameter("password"));
@@ -90,8 +94,8 @@ public abstract class VaadinAbstractLoginComponent extends LoginForm{
 			//welcome.addStyleName(ValoTheme.LABEL_COLORED);
 			labels.add(welcome);
 		//}
-        //dashboardSetup().loginFormTitle()
-		Label title = new Label("Graphenne Worksop");
+        //dashboardSetup().loginFormTitle() 
+		Label title = new Label("Graphenee Workshop");
 		title.setSizeUndefined();
 		//title.addStyleName(ValoTheme.LABEL_H3);
 		labels.add(title);
@@ -155,7 +159,7 @@ public abstract class VaadinAbstractLoginComponent extends LoginForm{
 //		}
 //	}
 
-	//protected abstract AbstractDashboardSetup dashboardSetup();
+	protected abstract AbstractDashboardSetup dashboardSetup();
 
 	protected void postInitialize() {
 	}
